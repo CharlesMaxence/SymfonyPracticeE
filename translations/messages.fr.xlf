@@ -45,6 +45,10 @@
         <source>agree_terms</source>
         <target>J'ai lu les condition générale</target>
       </trans-unit>
+      <trans-unit id="SdNWA5t" resname="Search">
+        <source>Search</source>
+        <target>Rechercher</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
