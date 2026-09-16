@@ -49,6 +49,38 @@
         <source>Search</source>
         <target>Rechercher</target>
       </trans-unit>
+      <trans-unit id="ebD_LOV" resname="Country index">
+        <source>Country index</source>
+        <target>Index pays</target>
+      </trans-unit>
+      <trans-unit id="hm.JYE2" resname="Id">
+        <source>Id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="wbMeKOh" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="W3yX.Gj" resname="actions">
+        <source>actions</source>
+        <target>actions</target>
+      </trans-unit>
+      <trans-unit id="usYUJnL" resname="show">
+        <source>show</source>
+        <target>Afficher</target>
+      </trans-unit>
+      <trans-unit id="BVAU8Tv" resname="edit">
+        <source>edit</source>
+        <target>Modifier</target>
+      </trans-unit>
+      <trans-unit id="hm005Tf" resname="no records found">
+        <source>no records found</source>
+        <target>Aucune donnée trouvée</target>
+      </trans-unit>
+      <trans-unit id="YNZdbtH" resname="Create new">
+        <source>Create new</source>
+        <target>Créer</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
