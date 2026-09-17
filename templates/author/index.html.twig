@@ -28,8 +28,8 @@
                 <td>{{ author.zip }}</td>
                 <td>{{ author.town }}</td>
                 <td>
-                    <a href="{{ path('app_country_show', {'id': author.id}) }}" title="{{"show"|trans}}"><i class="fa-solid fa-eye"></i></a>
-                    <a href="{{ path('app_country_edit', {'id': author.id}) }}" title="{{"edit"|trans}}"><i class="fa-solid fa-pen"></i></a>
+                    <a href="{{ path('app_author_show', {'id': author.id}) }}" title="{{"show"|trans}}"><i class="fa-solid fa-eye"></i></a>
+                    <a href="{{ path('app_author_edit', {'id': author.id}) }}" title="{{"edit"|trans}}"><i class="fa-solid fa-pen"></i></a>
                 </td>
             </tr>
         {% else %}
