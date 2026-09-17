@@ -3,9 +3,9 @@
 {% block title %}New Country{% endblock %}
 
 {% block body %}
-    <h1>Create new Country</h1>
+    <h1>{{"Create new Country"|trans}}</h1>
 
     {{ include('country/_form.html.twig') }}
 
-    <a href="{{ path('app_country_index') }}">back to list</a>
+    <a href="{{ path('app_country_index') }}"><button class="btn btn-primary">{{"back to list"|trans}}</button></a>
 {% endblock %}

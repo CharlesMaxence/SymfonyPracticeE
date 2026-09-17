@@ -81,6 +81,78 @@
         <source>Create new</source>
         <target>Créer</target>
       </trans-unit>
+      <trans-unit id=".I7Gp4i" resname="Book">
+        <source>Book</source>
+        <target>Livre</target>
+      </trans-unit>
+      <trans-unit id="devFmcu" resname="Author">
+        <source>Author</source>
+        <target>Auteur</target>
+      </trans-unit>
+      <trans-unit id="imSItxK" resname="Country">
+        <source>Country</source>
+        <target>Pays</target>
+      </trans-unit>
+      <trans-unit id="IZ6Ljjk" resname="Book index">
+        <source>Book index</source>
+        <target>Index Livre</target>
+      </trans-unit>
+      <trans-unit id=".zZzsFp" resname="Title">
+        <source>Title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="cQ8Z0Pa" resname="Nbrpages">
+        <source>Nbrpages</source>
+        <target>Nombres de pages</target>
+      </trans-unit>
+      <trans-unit id="5X.02Q4" resname="Create new Book">
+        <source>Create new Book</source>
+        <target>Créer un nouveau livre</target>
+      </trans-unit>
+      <trans-unit id="vci9HOQ" resname="back to list">
+        <source>back to list</source>
+        <target>Revenir</target>
+      </trans-unit>
+      <trans-unit id="iYGwxh8" resname="Author index">
+        <source>Author index</source>
+        <target>Index Auteur</target>
+      </trans-unit>
+      <trans-unit id="b0rVy.t" resname="Firstname">
+        <source>Firstname</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="jPtXcgB" resname="Address">
+        <source>Address</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="6A2UfPi" resname="Zip">
+        <source>Zip</source>
+        <target>Code postal</target>
+      </trans-unit>
+      <trans-unit id="KuqwHvQ" resname="Town">
+        <source>Town</source>
+        <target>Ville</target>
+      </trans-unit>
+      <trans-unit id="8T58Za5" resname="Create new Author">
+        <source>Create new Author</source>
+        <target>Créer un nouvelle auteur</target>
+      </trans-unit>
+      <trans-unit id="lphvqj5" resname="Edit Author">
+        <source>Edit Author</source>
+        <target>Modifier un auteur</target>
+      </trans-unit>
+      <trans-unit id="W8PpbrM" resname="Edit Book">
+        <source>Edit Book</source>
+        <target>Modifier un livre</target>
+      </trans-unit>
+      <trans-unit id="lmVxnRD" resname="Edit Country">
+        <source>Edit Country</source>
+        <target>Modifier un pays</target>
+      </trans-unit>
+      <trans-unit id="fsUxyRN" resname="Create new Country">
+        <source>Create new Country</source>
+        <target>Créer un nouveau pays</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
