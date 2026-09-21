@@ -51,7 +51,7 @@
       </trans-unit>
       <trans-unit id="ebD_LOV" resname="Country index">
         <source>Country index</source>
-        <target>Index pays</target>
+        <target>Index Pays</target>
       </trans-unit>
       <trans-unit id="hm.JYE2" resname="Id">
         <source>Id</source>
@@ -152,6 +152,26 @@
       <trans-unit id="fsUxyRN" resname="Create new Country">
         <source>Create new Country</source>
         <target>Créer un nouveau pays</target>
+      </trans-unit>
+      <trans-unit id="u1x_1qs" resname="delete">
+        <source>delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="PuhZjWG" resname="User index">
+        <source>User index</source>
+        <target>index User</target>
+      </trans-unit>
+      <trans-unit id="aq2eM8Q" resname="Roles">
+        <source>Roles</source>
+        <target>Rôles</target>
+      </trans-unit>
+      <trans-unit id="qUyUsfE" resname="IsVerified">
+        <source>IsVerified</source>
+        <target>est vérifié</target>
+      </trans-unit>
+      <trans-unit id="TkiKoB6" resname="User">
+        <source>User</source>
+        <target>Utilisateur</target>
       </trans-unit>
     </body>
   </file>
