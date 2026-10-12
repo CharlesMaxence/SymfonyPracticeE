@@ -6,6 +6,7 @@ use App\Repository\AnswerRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AnswerRepository::class)]
+#[ORM\Table(name:'tbl_answer')]
 class Answer
 {
     #[ORM\Id]
@@ -17,7 +18,7 @@ class Answer
     private ?string $text = null;
 
     #[ORM\Column]
-    private ?bool $is_correct = null;
+    private ?bool $is_correct = false;
 
     #[ORM\ManyToOne(inversedBy: 'answers')]
     private ?Question $question = null;

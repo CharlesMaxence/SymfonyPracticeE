@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: QuestionRepository::class)]
+#[ORM\Table(name:'tbl_question')]
 class Question
 {
     #[ORM\Id]
@@ -24,7 +25,7 @@ class Question
     /**
      * @var Collection<int, Answer>
      */
-    #[ORM\OneToMany(targetEntity: Answer::class, mappedBy: 'question')]
+    #[ORM\OneToMany(targetEntity: Answer::class, mappedBy: 'question', orphanRemoval: true, cascade: ['persist'])]
     private Collection $answers;
 
     public function __construct()
