@@ -25,9 +25,23 @@ class Image
     #[ORM\ManyToMany(targetEntity: Credit::class, inversedBy: 'images')]
     private Collection $credits;
 
+    /**
+     * @var Collection<int, SlideShow>
+     */
+    #[ORM\OneToMany(targetEntity: SlideShow::class, mappedBy: 'image')]
+    private Collection $slideShows;
+
+    /**
+     * @var Collection<int, Slide>
+     */
+    #[ORM\ManyToMany(targetEntity: Slide::class, mappedBy: 'image')]
+    private Collection $slides;
+
     public function __construct()
     {
         $this->credits = new ArrayCollection();
+        $this->slideShows = new ArrayCollection();
+        $this->slides = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -67,6 +81,63 @@ class Image
     public function removeCredit(Credit $credit): static
     {
         $this->credits->removeElement($credit);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, SlideShow>
+     */
+    public function getSlideShows(): Collection
+    {
+        return $this->slideShows;
+    }
+
+    public function addSlideShow(SlideShow $slideShow): static
+    {
+        if (!$this->slideShows->contains($slideShow)) {
+            $this->slideShows->add($slideShow);
+            $slideShow->setImage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSlideShow(SlideShow $slideShow): static
+    {
+        if ($this->slideShows->removeElement($slideShow)) {
+            // set the owning side to null (unless already changed)
+            if ($slideShow->getImage() === $this) {
+                $slideShow->setImage(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Slide>
+     */
+    public function getSlides(): Collection
+    {
+        return $this->slides;
+    }
+
+    public function addSlide(Slide $slide): static
+    {
+        if (!$this->slides->contains($slide)) {
+            $this->slides->add($slide);
+            $slide->addImage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSlide(Slide $slide): static
+    {
+        if ($this->slides->removeElement($slide)) {
+            $slide->removeImage($this);
+        }
 
         return $this;
     }

@@ -6,21 +6,41 @@ import './stimulus_bootstrap.js';
  * which should already be in your base.html.twig.
  */
 import './styles/app.css';
-// assets/app.js (ou un fichier dédié, importé par app.js)
-document
-  .querySelectorAll('.add_item_link')
-  .forEach((btn) => {
-    btn.addEventListener('click', addFormToCollection);
-  });
+document.addEventListener('turbo:load', initializeAnswerDeleteButtons);
+initializeAnswerDeleteButtons();
 
-document
-  .querySelectorAll('ul.answers li')
-  .forEach((answer) => {
-    addAnswerFormDeleteLink(answer);
-  });
+document.addEventListener('click', (event) => {
+  const target = event.target;
+  if (!(target instanceof Element)) {
+    return;
+  }
 
-function addFormToCollection(e) {
-  const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
+  const addButton = target.closest('.add_item_link');
+  if (addButton) {
+    addFormToCollection(addButton);
+    return;
+  }
+
+  const removeButton = target.closest('.remove-answer');
+  if (removeButton) {
+    event.preventDefault();
+    removeButton.closest('li')?.remove();
+  }
+});
+
+function initializeAnswerDeleteButtons() {
+  document.querySelectorAll('ul.answers li').forEach((answer) => {
+    if (!answer.querySelector('.remove-answer')) {
+      addAnswerFormDeleteLink(answer);
+    }
+  });
+}
+
+function addFormToCollection(button) {
+  const collectionHolder = document.querySelector('.' + button.dataset.collectionHolderClass);
+  if (!collectionHolder) {
+    return;
+  }
 
   const item = document.createElement('li');
 
@@ -38,14 +58,11 @@ function addFormToCollection(e) {
 
 function addAnswerFormDeleteLink(item) {
   const removeFormButton = document.createElement('button');
+  removeFormButton.type = 'button';
+  removeFormButton.classList.add('remove-answer');
   removeFormButton.innerText = 'Supprimer cette réponse';
 
   item.append(removeFormButton);
-
-  removeFormButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    item.remove();
-  });
 }
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
