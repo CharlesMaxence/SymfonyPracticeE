@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\image;
+use App\Entity\Image;
 use App\Entity\Slide;
 use App\Entity\SlideShow;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -18,8 +18,9 @@ class SlideType extends AbstractType
             ->add('title')
             ->add('description')
             ->add('position')
-            ->add('image', EntityType::class, [
-                'class' => image::class,
+            ->add('content')
+            ->add('Image', EntityType::class, [
+                'class' => Image::class,
                 'choice_label' => 'id',
                 'multiple' => true,
             ])

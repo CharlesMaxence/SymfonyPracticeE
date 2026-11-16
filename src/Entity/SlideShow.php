@@ -19,7 +19,7 @@ class SlideShow
     private ?string $title = null;
 
     #[ORM\ManyToOne(inversedBy: 'slideShows')]
-    private ?image $image = null;
+    private ?Image $image = null;
 
     /**
      * @var Collection<int, Slide>
@@ -52,12 +52,12 @@ class SlideShow
         return $this;
     }
 
-    public function getImage(): ?image
+    public function getImage(): ?Image
     {
         return $this->image;
     }
 
-    public function setImage(?image $image): static
+    public function setImage(?Image $image): static
     {
         $this->image = $image;
 

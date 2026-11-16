@@ -28,6 +28,9 @@ class Question
     #[ORM\OneToMany(targetEntity: Answer::class, mappedBy: 'question', orphanRemoval: true, cascade: ['persist'])]
     private Collection $answers;
 
+    #[ORM\ManyToOne(inversedBy: 'questions')]
+    private ?Theme $theme = null;
+
     public function __construct()
     {
         $this->answers = new ArrayCollection();
@@ -88,6 +91,18 @@ class Question
                 $answer->setQuestion(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTheme(): ?Theme
+    {
+        return $this->theme;
+    }
+
+    public function setTheme(?Theme $theme): static
+    {
+        $this->theme = $theme;
 
         return $this;
     }

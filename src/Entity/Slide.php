@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\SlideRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SlideRepository::class)]
@@ -28,14 +29,17 @@ class Slide
      * @var Collection<int, Image>
      */
     #[ORM\ManyToMany(targetEntity: Image::class, inversedBy: 'slides')]
-    private Collection $image;
+    private Collection $Image;
 
     #[ORM\ManyToOne(inversedBy: 'slides')]
     private ?SlideShow $SlideShow = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $content = null;
+
     public function __construct()
     {
-        $this->image = new ArrayCollection();
+        $this->Image = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -80,25 +84,25 @@ class Slide
     }
 
     /**
-     * @return Collection<int, image>
+     * @return Collection<int, Image>
      */
     public function getImage(): Collection
     {
-        return $this->image;
+        return $this->Image;
     }
 
-    public function addImage(image $image): static
+    public function addImage(Image $image): static
     {
-        if (!$this->image->contains($image)) {
-            $this->image->add($image);
+        if (!$this->Image->contains($image)) {
+            $this->Image->add($image);
         }
 
         return $this;
     }
 
-    public function removeImage(image $image): static
+    public function removeImage(Image $image): static
     {
-        $this->image->removeElement($image);
+        $this->Image->removeElement($image);
 
         return $this;
     }
@@ -111,6 +115,18 @@ class Slide
     public function setSlideShow(?SlideShow $SlideShow): static
     {
         $this->SlideShow = $SlideShow;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(?string $content): static
+    {
+        $this->content = $content;
 
         return $this;
     }

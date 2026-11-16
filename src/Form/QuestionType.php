@@ -15,6 +15,7 @@ class QuestionType extends AbstractType
         $builder
             ->add('text')
             ->add('explanation')
+            ->add('theme')
             ->add('answers', CollectionType::class, [
                 'entry_type' => AnswerType::class,
                 'entry_options' => ['label' => false],
