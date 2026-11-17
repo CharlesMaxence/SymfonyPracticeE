@@ -44,6 +44,11 @@ class Theme
         $this->questions = new ArrayCollection();
     }
 
+    public function __toString(): string
+    {
+        return $this->title . ' (' . $this->id . ')';
+    }
+
     public function getId(): ?int
     {
         return $this->id;

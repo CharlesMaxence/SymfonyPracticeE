@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Thème 1{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .theme-link {
+        display: flex;
+        min-height: 180px;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        text-decoration: none;
+    }
+</style>
+
+<div class="example-wrapper">
+    <h1>Des questions pour prouver votre bonne attitude envers le matériel informatique</h1>
+
+    <center>Les questions sont regroupées en plusieurs parties qui chacune à des diaporama pour revoir les notions importantes</center>
+</div>
+<div class="d-grid gap-2 col-6 mx-auto">
+    <a class="btn-solid theme-primary theme-link" href="{{ path('app_book_index') }}">Thème 1</a>
+    <a class="btn-solid theme-primary theme-link" href="{{ path('app_author_index') }}">Thème 2</a>
+</div>
+{{current_date}} - {{app_name}}
+{% endblock %}
