@@ -22,8 +22,11 @@
     <center>Les questions sont regroupées en plusieurs parties qui chacune à des diaporama pour revoir les notions importantes</center>
 </div>
 <div class="d-grid gap-2 col-6 mx-auto">
-    <a class="btn-solid theme-primary theme-link" href="/theme1">Thème 1</a>
-    <a class="btn-solid theme-primary theme-link" href="/theme2">Thème 2</a>
+    {% for theme in themes %}
+        <a class="btn-solid theme-primary theme-link" href="{{ path('app_theme_next', {id: theme.id}) }}">{{ theme.title }}</a>
+    {% else %}
+        <p>Aucun thème disponible pour le moment.</p>
+    {% endfor %}
 </div>
 {{current_date}} - {{app_name}}
 {% endblock %}

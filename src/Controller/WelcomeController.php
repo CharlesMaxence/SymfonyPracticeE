@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ThemeRepository;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,7 +12,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 final class WelcomeController extends AbstractController
 {
     #[Route('/', name: 'app_welcome')]
-    public function index(TranslatorInterface $translator, LoggerInterface $logger): Response
+    public function index(TranslatorInterface $translator, LoggerInterface $logger, ThemeRepository $themeRepository): Response
     {
         $appName=$translator->trans('First Steps Digital');
 
@@ -24,6 +25,7 @@ final class WelcomeController extends AbstractController
             'controller_name' => 'WelcomeController',
             'app_name' => $appName,
             'current_date' => $CurentDate->format('d/m/Y'),
+            'themes' => $themeRepository->findBy([], ['step' => 'ASC']),
         ]);
     }
 }
