@@ -25,4 +25,18 @@ return [
     '@hotwired/turbo' => [
         'version' => '8.0.23',
     ],
+    'tw-animate-css/dist/tw-animate.css' => [
+        'version' => '1.4.0',
+        'type' => 'css',
+    ],
+    'shadcn/dist/tailwind.css' => [
+        'version' => '4.23.0',
+        'type' => 'css',
+    ],
+    'embla-carousel' => [
+        'version' => '8.6.0',
+    ],
+    'embla-carousel-autoplay' => [
+        'version' => '8.6.0',
+    ],
 ];

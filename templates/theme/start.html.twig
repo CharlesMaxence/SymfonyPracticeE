@@ -1,9 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Theme{% endblock %}
+{% block title %}{{ theme.title }}{% endblock %}
 
 {% block body %}
     <h1>{{ theme.title }}</h1>
+    <p>{{ theme.description }}</p>
 
-    {{ theme.description }}
+    {% for slideshow in theme.slideshows %}
+        {% for slide in slideshow.slides %}
+            {% if slide.image %}
+                <img src="{{ slide.image.path }}" alt="Image du slide" width="200">
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
 {% endblock %}

@@ -22,7 +22,7 @@ class SlideShowType extends AbstractType
             ])
             ->add('Theme', EntityType::class, [
                 'class' => Theme::class,
-                'choice_label' => 'id',
+                'choice_label' => 'title',
             ])
         ;
     }
